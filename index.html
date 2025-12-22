@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handyman Oakville Ontario | Professional Home Services & Repairs</title>
+    <meta name="description" content="Reliable handyman services in Oakville, ON. Expert furniture assembly, TV mounting, appliance repair, power washing, and more. Fully insured & local.">
+    <!-- REMINDER: Replace placeholder colors with your brand's HEX codes -->
+    <style>
+        :root {
+            --primary-color: #1a365d; /* PLACEHOLDER: Dark Blue/Navy */
+            --accent-color: #e53e3e;  /* PLACEHOLDER: Red/Accent */
+            --light-color: #f8f9fa;
+            --dark-color: #2d3748;
+            --gray-color: #718096;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #fff;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Footer */
+        header, footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+        }
+        .header-container, .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo a {
+            display: inline-block; /* Ensures proper sizing for image */
+            line-height: 1;
+        }
+        .logo-img {
+            height: 60px; /* Control logo size */
+            width: auto;
+            display: block;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.2s ease;
+        }
+        nav a:hover, nav a:focus {
+            color: var(--accent-color);
+            outline: none;
+        }
+        .nav-btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.6rem 1.5rem !important;
+            border-radius: 4px;
+            margin-left: 0.5rem;
+            white-space: nowrap;
+        }
+        .nav-btn:hover {
+            background-color: #c53030;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                        url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.95;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-size: 1rem;
+        }
+        .btn:hover, .btn:focus {
+            background-color: #c53030;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            outline: none;
+        }
+
+        /* Section Styling */
+        section {
+            padding: clamp(2.5rem, 5vw, 4rem) 1rem;
+        }
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.8rem, 4vw, 2.2rem);
+            margin-bottom: 2.5rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            margin: 0.7rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .service-card {
+            background: var(--light-color);
+            border-radius: 8px;
+            padding: 1.8rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--accent-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+        }
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        /* Blogs Grid */
+        .blogs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .blog-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .blog-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border-color: var(--accent-color);
+        }
+        .blog-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card h3 {
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            line-height: 1.4;
+        }
+        .blog-card a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .blog-card a:hover h3 {
+            color: var(--accent-color);
+        }
+        .blog-card p {
+            color: var(--gray-color);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+        .read-more {
+            color: var(--accent-color);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            margin-top: auto;
+            width: fit-content;
+        }
+        .read-more:hover {
+            text-decoration: underline;
+            gap: 0.5rem;
+        }
+
+        /* Citations & Contact */
+        .citations {
+            background-color: var(--light-color);
+        }
+        .citation-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .citation-links a {
+            background: white;
+            padding: 0.9rem 1.8rem;
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            box-shadow: var(--shadow);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .citation-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 1rem;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.9rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.1);
+        }
+        .form-status {
+            padding: 0.8rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+            display: none;
+            text-align: center;
+            font-weight: 600;
+        }
+        .form-status.success {
+            background-color: #c6f6d5;
+            color: #22543d;
+            display: block;
+        }
+        .form-status.error {
+            background-color: #fed7d7;
+            color: #742a2a;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2.5rem 0 1.5rem;
+            margin-top: 3rem;
+        }
+        .footer-container {
+            align-items: flex-start;
+        }
+        .footer-logo, .footer-nav, .business-info {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 1.5rem;
+        }
+        .footer-nav ul {
+            flex-direction: column;
+            gap: 0.8rem;
+            align-items: center;
+        }
+        .business-info p {
+            margin: 0.4rem 0;
+            line-height: 1.5;
+        }
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            width: 100%;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        /* Enhanced Responsive Design */
+        @media (max-width: 768px) {
+            .header-container, .footer-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.2rem;
+            }
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                gap: 0.8rem;
+            }
+            .nav-btn {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+            .hero {
+                padding: 3rem 1rem;
+            }
+            section {
+                padding: 2.5rem 1rem;
+            }
+            .services-grid, .blogs-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .contact-grid {
+                gap: 2rem;
+            }
+            .logo-img {
+                height: 50px; /* Slightly smaller logo on mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .btn, .nav-btn {
+                padding: 0.7rem 1.5rem;
+                width: 100%;
+                display: block;
+            }
+            .citation-links a {
+                padding: 0.8rem 1.2rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <!-- ACTUAL LOGO IMAGE INTEGRATED -->
+                <a href="https://handymanoakvilleontario.ca" title="Handyman Oakville Ontario - Home">
+                    <img src="https://handymanoakvilleontario.ca/wp-content/uploads/2025/07/HOO-Handyman-Oakville-Ontario-logo.png"
+                         alt="Handyman Oakville Ontario Logo - Professional Home Services"
+                         class="logo-img">
+                </a>
+            </div>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="#services" class="active">Services</a></li>
+                    <li><a href="#blogs">Expert Advice</a></li>
+                    <li><a href="#citations">Find Us Online</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="tel:4372314954" class="btn nav-btn">Call (437) 231-4954</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Professional & Reliable Handyman Services in Oakville</h1>
+                <p>Fully insured local experts for furniture assembly, appliance repair, TV mounting, power washing, and all your home maintenance needs. Serving Oakville, Burlington, Mississauga and the surrounding GTA.</p>
+                <a href="#contact" class="btn">Get Your Free Quote Today</a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="container">
+            <h2 class="section-title">Our Expert Handyman Services</h2>
+            <div class="services-grid">
+                <!-- Service cards remain exactly as you had them -->
+                <article class="service-card">
+                    <h3>Sliding Mirror Doors</h3>
+                    <p>Professional installation and repair of closet sliding mirror doors for a seamless look.</p>
+                </article>
+                <article class="service-card">
+                    <h3>Wall Unit & Custom Shelving</h3>
+                    <p>Design, build, and install functional and stylish wall storage solutions.</p>
+                </article>
+                <article class="service-card">
+                    <h3>TV Mounting & Home Electronics</h3>
+                    <p>Safe and secure mounting of TVs, sound systems, and cable management.</p>
+                </article>
+                <article class="service-card">
+                    <h3>Furniture Assembly</h3>
+                    <p>Stress-free assembly of IKEA furniture, bed frames, desks, and more.</p>
+                </article>
+                <article class="service-card">
+                    <h3>Appliance Repair</h3>
+                    <p>Diagnosis and repair of washers, dryers, refrigerators, ovens, and cooktops.</p>
+                </article>
+                <article class="service-card">
+                    <h3>Power Washing</h3>
+                    <p>Exterior cleaning of driveways, decks, patios, and siding to restore curb appeal.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Blogs Section -->
+        <section id="blogs" class="container">
+            <h2 class="section-title">Latest Handyman Tips & Expert Advice</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: var(--gray-color);">Practical guides to maintain and repair your home.</p>
+            <div class="blogs-grid">
+                <!-- Blog posts are dynamically inserted here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Citations Section -->
+        <section id="citations" class="citations">
+            <div class="container">
+                <h2 class="section-title">Find Us on Trusted Local Directories</h2>
+                <div class="citation-links">
+                    <a href="https://maps.app.goo.gl/1WsIarPTIFlgf9QwJ" target="_blank" rel="noopener noreferrer">
+                        <span aria-hidden="true">📍</span> Google Business Profile
+                    </a>
+                    <a href="https://handymanoakvilleontario.ca" target="_blank" rel="noopener noreferrer">
+                        <span aria-hidden="true">🌐</span> Our Main Website
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="container">
+            <h2 class="section-title">Contact Your Local Oakville Handyman</h2>
+            <div class="contact-grid">
+                <div class="business-info">
+                    <h3>Handyman Oakville Ontario</h3>
+                    <p><strong>Owner:</strong> Ismayil Yashar</p>
+                    <p><strong>Address:</strong> 2010 Winston Park Dr #200, Oakville, ON L6H 5R7</p>
+                    <p><strong>Phone:</strong> <a href="tel:4372314954">(437) 231-4954</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:info@handymanoakvilleontario.ca">info@handymanoakvilleontario.ca</a></p>
+                    <p><strong>Areas Served:</strong> Oakville, Burlington, Mississauga</p>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" placeholder="Your Name" aria-label="Your Name" required>
+                    <input type="email" placeholder="Your Email" aria-label="Your Email" required>
+                    <input type="tel" placeholder="Your Phone Number" aria-label="Your Phone Number (Optional)">
+                    <textarea rows="5" placeholder="Describe your project or service needed..." aria-label="Project Description" required></textarea>
+                    <button type="submit" class="btn">Send Message for a Free Quote</button>
+                    <div class="form-status" id="formStatus" role="alert"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <a href="https://handymanoakvilleontario.ca">
+                    <img src="https://handymanoakvilleontario.ca/wp-content/uploads/2025/07/HOO-Handyman-Oakville-Ontario-logo.png"
+                         alt="Handyman Oakville Ontario Logo"
+                         class="logo-img" style="height: 50px;">
+                </a>
+            </div>
+            <div class="business-info">
+                <p>&copy; <span id="currentYear"></span> Handyman Oakville Ontario.</p>
+                <p>Professional, Insured, and Local Home Service Experts.</p>
+                <p>2010 Winston Park Dr #200, Oakville, ON L6H 5R7</p>
+            </div>
+            <nav class="footer-nav" aria-label="Footer Navigation">
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#blogs">Expert Advice</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="tel:4372314954">Call Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Dynamically insert Blog Posts
+        const blogPosts = [
+            { title: "How Long Does It Take to Assemble an IKEA Bed?", url: "https://handymanoakvilleontario.ca/how-long-does-it-take-to-assemble-an-ikea-bed/" },
+            { title: "A Comprehensive List of Essential Handyman Skills", url: "https://handymanoakvilleontario.ca/list-of-handyman-skills/" },
+            { title: "Troubleshooting Guide: Electric Cooktop Not Working", url: "https://handymanoakvilleontario.ca/electric-cooktop-not-working/" },
+            { title: "Common Fixes for a Whirlpool Washing Machine", url: "https://handymanoakvilleontario.ca/fixing-whirlpool-washing-machine/" },
+            { title: "Pro Tips for a Flawless Exterior Painting Job", url: "https://handymanoakvilleontario.ca/exterior-painting-tips/" },
+            { title: "What to Do When Your Fridge Is Not Getting Cold", url: "https://handymanoakvilleontario.ca/fridge-not-getting-cold/" },
+            { title: "Step-by-Step Guide: How to Defrost a Freezer Safely", url: "https://handymanoakvilleontario.ca/how-to-defrost-a-freezer/" },
+            { title: "How to Extend the Life of Your Kitchen Appliances", url: "https://handymanoakvilleontario.ca/how-to-extend-the-life-of-your-kitchen-appliances/" }
+        ];
+
+        const blogGrid = document.querySelector('.blogs-grid');
+        blogPosts.forEach(post => {
+            const article = document.createElement('article');
+            article.className = 'blog-card';
+            article.innerHTML = `
+                <div class="blog-content">
+                    <a href="${post.url}" target="_blank" rel="noopener noreferrer">
+                        <h3>${post.title}</h3>
+                    </a>
+                    <p>Read our detailed guide to solve this common home issue.</p>
+                    <a href="${post.url}" class="read-more" target="_blank" rel="noopener noreferrer">
+                        Read More <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            `;
+            blogGrid.appendChild(article);
+        });
+
+        // 2. Update Copyright Year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // 3. Enhanced Form Handling with Validation Feedback
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Simple validation
+            const name = this.querySelector('input[type="text"]').value.trim();
+            const email = this.querySelector('input[type="email"]').value.trim();
+            const message = this.querySelector('textarea').value.trim();
+
+            formStatus.className = 'form-status';
+            formStatus.textContent = '';
+            formStatus.setAttribute('aria-live', 'polite');
+
+            if (!name || !email || !message) {
+                formStatus.textContent = 'Please fill in all required fields.';
+                formStatus.className = 'form-status error';
+                return;
+            }
+
+            // Simulate form submission
+            formStatus.textContent = 'Sending your message...';
+            formStatus.className = 'form-status';
+
+            setTimeout(() => {
+                // In a real scenario, you would send data to a server here
+                // For example, using fetch() to your form processing endpoint
+                formStatus.textContent = 'Thank you! Your message has been sent. We will contact you shortly.';
+                formStatus.className = 'form-status success';
+                contactForm.reset();
+
+                // Reset status message after 5 seconds
+                setTimeout(() => {
+                    formStatus.className = 'form-status';
+                    formStatus.textContent = '';
+                }, 5000);
+            }, 1000);
+        });
+
+        // 4. Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
