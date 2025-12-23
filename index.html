@@ -172,6 +172,53 @@
             font-size: 1.3rem;
         }
 
+        /* Service Areas Section - NEW */
+        .service-areas {
+            background-color: var(--light-color);
+            text-align: center;
+        }
+        .areas-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .areas-subheading {
+            font-size: 1.4rem;
+            color: var(--gray-color);
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+        .areas-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .area-link {
+            background: white;
+            padding: 1.5rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.3rem;
+            box-shadow: var(--shadow);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .area-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+        .area-link::before {
+            content: '📍';
+            font-size: 1.5rem;
+        }
+
         /* Blogs Grid */
         .blogs-grid {
             display: grid;
@@ -366,6 +413,14 @@
             .logo-img {
                 height: 50px; /* Slightly smaller logo on mobile */
             }
+            .areas-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .area-link {
+                padding: 1.2rem 2rem;
+                font-size: 1.2rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -383,6 +438,10 @@
             .citation-links a {
                 padding: 0.8rem 1.2rem;
                 font-size: 0.9rem;
+            }
+            .area-link {
+                padding: 1rem 1.5rem;
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -402,6 +461,7 @@
             <nav aria-label="Main Navigation">
                 <ul>
                     <li><a href="#services" class="active">Services</a></li>
+                    <li><a href="#service-areas">Service Areas</a></li>
                     <li><a href="#blogs">Expert Advice</a></li>
                     <li><a href="#citations">Find Us Online</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -452,7 +512,7 @@
                 </article>
             </div>
         </section>
-        
+
         <!-- Service Areas Section - NEW -->
         <section id="service-areas" class="service-areas">
             <div class="container">
@@ -537,11 +597,15 @@
             <nav class="footer-nav" aria-label="Footer Navigation">
                 <ul>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#service-areas">Service Areas</a></li>
                     <li><a href="#blogs">Expert Advice</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="tel:4372314954">Call Us</a></li>
                 </ul>
             </nav>
+        </div>
+        <div class="container copyright">
+            <p>This website uses semantic HTML for better accessibility and SEO.</p>
         </div>
     </footer>
 
@@ -638,6 +702,4 @@
         });
     </script>
 </body>
-
 </html>
-
